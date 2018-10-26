@@ -1,0 +1,85 @@
+/**
+ * Angus MacDonald
+ * 15009351
+ * Tutor: Karen MacKay
+ * 26/10/2018
+ * version 2
+ * 
+ */
+
+package hotelBooking;
+
+import java.util.Scanner;
+
+public class Hotel {
+	
+	private int hotelNumber;
+	private String hotelName;
+	private Floor floors[] = new Floor[4];
+	
+	public Hotel(int nos, String name)
+	{
+		
+		/**
+		 * calls floor class and stores the variables into an array for floors
+		 */
+		hotelNumber = nos;
+		hotelName = name;
+		Floor f1 = new Floor(1);
+		Floor f2 = new Floor(2);
+		Floor f3 = new Floor(3);
+		Floor f4 = new Floor(4);
+		floors[0] = f1;
+		floors[1] = f2;
+		floors[2] = f3;
+		floors[3] = f4;
+		
+	}
+	
+	public void display()
+	{
+		/**
+		 * displays hotel name and floors
+		 */
+		System.out.println("Hotal Name: "+hotelName);
+		for (int counter=0;counter<floors.length;counter++)
+		{
+			floors[counter].displayFloor();
+		}
+		
+	}
+	
+	public void display(int floorNos)
+	{
+		/**
+		 * Displays floor numbers of the hotel
+		 */
+		System.out.println("Hotel Name: " +hotelName);
+		floors[floorNos].displayFloor();
+	}
+	
+	public void bookARoom()
+	{
+		/**
+		 * Books room and desired floor
+		 */
+		Scanner kboard = new Scanner(System.in);
+		int floorChoice;
+		System.out.println("Which floor would you like to stay on?");
+		floorChoice = kboard.nextInt();
+		floors[floorChoice-1].findRoomBook();
+	}
+	
+	public void cancelARoom()
+	{
+		/**
+		 * cancels room on desired floor
+		 */
+		Scanner kboard = new Scanner(System.in);
+		int floorChoice;
+		System.out.println("Which floor are you staying on?");
+		floorChoice = kboard.nextInt();
+		floors[floorChoice-1].findRoomCancel();
+	}
+
+}
