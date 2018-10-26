@@ -1,0 +1,90 @@
+package hotelBooking;
+
+import java.util.Scanner;
+
+public class Menu {
+	
+	Room room = new Room();
+	
+	
+	public Menu()
+	{
+		
+	}
+	
+	public void getMenu()
+	{
+		Hotel h1 = new Hotel(101,"Disco World Champion Hotel");
+
+
+		
+		Scanner kboard = new Scanner(System.in);
+		int choice = 0;
+		
+		System.out.println("Booking Menu");
+		System.out.println("Select from the options below");
+		System.out.println("1. Check room availability");
+		System.out.println("2. Display floor");
+		System.out.println("3. Display all availability");
+		System.out.println("4. Cancel Booking");
+		System.out.println("Please enter choice (press 8 to continue)");
+		choice=kboard.nextInt();
+		
+		
+		do
+		{
+			switch(choice)
+			{
+			case 1: getRoomMenu();
+			break;
+			case 2: 
+			break;
+			case 3: h1.display(); 
+			break;
+			}
+			
+			System.out.println("Booking Menu");
+			System.out.println("Select from the options below");
+			System.out.println("1. Check room availability");
+			System.out.println("2. Display floor");
+			System.out.println("3. Display all availability");
+			System.out.println("4. Cancel Booking");
+			System.out.println("Please enter choice (press 8 to continue)");
+			choice=kboard.nextInt();
+		}
+			while (choice !=8);
+	}
+	
+	public void getRoomMenu()
+	{
+		Floor f1 = new Floor(1);
+		Floor f2 = new Floor(2);
+		Floor f3 = new Floor(3);
+		Floor f4 = new Floor(4);
+
+		Scanner kboard = new Scanner(System.in);
+		int choice = 0;
+		System.out.println("Which Floor?");
+		System.out.println("1");
+		System.out.println("2");
+		System.out.println("3");
+		System.out.println("4");
+		choice=kboard.nextInt();
+		do
+		{
+			switch(choice)
+			{
+			case 1: f1.displayFloor();
+			break;
+			case 2: f2.displayFloor();
+			break;
+			case 3: f3.displayFloor(); 
+			break;
+			case 4: f4.displayFloor(); 
+			break;
+			}
+		}
+		while(choice !=8);
+	}
+}
+			
