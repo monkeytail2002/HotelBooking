@@ -1,0 +1,91 @@
+/**
+ * Angus MacDonald
+ * 15009351
+ * Tutor: Karen MacKay
+ * 26/10/2018
+ * version 2
+ * 
+ */
+
+package hotelBooking;
+
+import java.util.Scanner;
+
+public class Room {
+	
+	public static int length;
+	private int roomNo;
+	private Customer occupier;
+	private boolean status;
+
+	public Room(int room)
+	{
+		roomNo = room;
+		status = true;
+	}
+	
+	public void display()
+	{
+		/**
+		 * Displays whether room is available or if there is an occupant.
+		 */
+		System.out.println("Room number: "+roomNo);
+		if(status == true)
+			System.out.println("Room available");
+		else
+			occupier.display();
+
+	}
+	
+	public void bookRoom(Customer newPerson)
+	{
+		/**
+		 * Checks if room is booked or not.
+		 */
+		if(status == true)
+		{
+			status = false;
+			occupier = newPerson;
+		}
+		else
+			System.out.println("This room is already booked.");
+	}
+	
+	public void bookRoom()
+	{
+		/**
+		 * books room for customer
+		 */
+		System.out.println("Room " +roomNo);
+		if (status == true)
+		{
+			Customer newPerson = new Customer();
+			newPerson.getName();
+			newPerson.getEmail();
+			status = false;
+			occupier = newPerson;
+			System.out.println("Room booked.");
+		}
+		else
+			System.out.println("This room is already booked");
+	}
+	
+	public void cancelRoom()
+	{
+		/**
+		 * Cancels room booking
+		 */
+		status = true;
+		occupier = null;
+		System.out.println("Room booking cancelled.");
+	}
+
+	public int returnRoomNos() {
+		/**
+		 * Returns room number
+		 */
+		return roomNo;
+	}
+	
+
+}
