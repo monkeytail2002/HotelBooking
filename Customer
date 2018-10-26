@@ -1,0 +1,68 @@
+/**
+ * Angus MacDonald
+ * 15009351
+ * Tutor: Karen MacKay
+ * 26/10/2018
+ * version 1
+ * 
+ */
+
+package hotelBooking;
+
+import java.util.Scanner;
+
+public class Customer {
+	
+
+	private String custName;
+	private String custEmail;
+	
+	public Customer() 
+	{
+	
+	}
+	
+	public Customer(String name, String email)
+	{
+		/**
+		 * Initialise variable and set them to parameter of constructor
+		 */
+		custName = name;
+		custEmail = email;
+	}
+	
+	public void getName()
+	{
+		/**
+		 * Takes user input for customer name and sets it to custName variable
+		 */
+		Scanner kboard = new Scanner(System.in);
+		System.out.println("Enter name");
+		custName = kboard.nextLine();
+
+	}
+	
+	
+	public void getEmail()
+	{
+		/**
+		 * Takes user input for customer email and sets it to custEmail variable
+		 */
+		Scanner kboard = new Scanner(System.in);
+		System.out.println("Enter email address");
+		custEmail = kboard.nextLine();
+
+	}
+	
+	public void display()
+	{
+		/**
+		 * Displays information.
+		 */
+		System.out.println("Name: "+custName);
+		System.out.println("Email address: "+custEmail);
+	
+	}
+	
+
+}
