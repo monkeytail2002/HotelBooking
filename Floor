@@ -1,0 +1,108 @@
+/**
+ * Angus MacDonald
+ * 15009351
+ * Tutor: Karen MacKay
+ * 26/10/2018
+ * version 2
+ * 
+ */
+
+package hotelBooking;
+
+import java.util.Scanner;
+
+public class Floor {
+	
+	private int floorNumber;
+	Room[] rooms = new Room[4];
+
+	
+	public Floor()
+	{
+
+	}
+	
+	public Floor(int nos)
+	{
+		/**
+		 * calls the room class and initialises it into an array.
+		 */
+		floorNumber = nos;
+		Room r1 = new Room(1);
+		Room r2  = new Room(2);
+		Room r3 = new Room(3);
+		Room r4 = new Room(4);
+		
+	
+		rooms[0] = r1;
+		rooms[1]=r2;
+		rooms[2]=r3;
+		rooms[3]=r4;
+
+		
+	}
+	
+	public void displayFloor()
+	{
+		/**
+		 * Displays floor number and room display method
+		 */
+		System.out.println("Floor: "+floorNumber);
+		for(int counter=0;counter<rooms.length;counter++)
+			rooms[counter].display();
+	}
+
+	
+
+	public void findRoomBook()
+	{
+		/**
+		 * Checks to see if there is a room available to book on the floor
+		 */
+		Scanner kboard = new Scanner(System.in);
+		int nos;
+		int counter=0;
+		boolean found = false;
+		System.out.println("Please enter room number: ");
+		nos = kboard.nextInt();
+		for(counter = 0;counter<rooms.length;counter++)
+		{
+			if (nos == rooms[counter].returnRoomNos())
+			{
+				found = true;
+				rooms[counter].bookRoom();
+				break;
+			}
+		}
+		if(found == false)
+			System.out.println("This room does not exist.");
+		
+		
+	}
+	
+	public void findRoomCancel()
+	{
+		/**
+		 * method for cancelling room on a floor.
+		 */
+		Scanner kboard = new Scanner(System.in);
+		int nos; int counter=0;boolean found = false;
+		System.out.println("Enter room number: ");
+		nos = kboard.nextInt();
+		for(counter=0;counter<rooms.length;counter++)
+		{
+			if(nos == rooms[counter].returnRoomNos())
+			{
+				found = true;
+				rooms[counter].cancelRoom();
+				break;
+			}
+		}
+		if(found==false)
+			System.out.println("Room does not exist.");
+	}
+	
+
+	
+
+}
