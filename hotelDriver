@@ -1,0 +1,74 @@
+/**
+ * Angus MacDonald
+ * 15009351
+ * Tutor: Karen MacKay
+ * 26/10/2018
+ * version 5
+ * 
+ */
+
+package hotelBooking;
+
+public class hotelDriver {
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/**
+		 * Initialise and call in various classes
+		 */
+		Customer cust1 = new Customer("Ronnie James Dio", "Dio@Rainbow.com");
+		Customer cust2 = new Customer();
+		Room r1 = new Room(1);
+		Floor f1 = new Floor(1);
+		Floor f2 = new Floor(2);
+		Hotel h1 = new Hotel(101,"The Grand Bhudapest");
+		
+		
+		
+		/**
+		 * Test customer class
+		 */
+//		cust1.display();
+//		cust2.getName();
+//		cust2.getEmail();
+//		cust2.display();
+
+		
+		/**
+		 * Test room class
+		 */
+//		r1.display();
+//		r1.bookRoom();
+//		r1.display();
+//		r1.cancelRoom();
+//		r1.display();
+
+		
+		
+		/**
+		 * Test multiple floors from floor class
+		 */
+//		f1.displayFloor();
+//		f1.findRoomBook();
+//		f1.displayFloor();
+//		f2.displayFloor();
+//		f2.findRoomBook();
+//		f2.displayFloor();
+
+		
+		/**
+		 * Test hotel class
+		 */
+		h1.display();
+		h1.bookARoom();
+		h1.display();
+		h1.cancelARoom();
+		h1.display();
+
+
+		
+
+	}
+
+}
